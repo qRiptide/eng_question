@@ -1,0 +1,30 @@
+Для развертывания проекта необходимо:
+
+    0. Установить Docker и Docker Compose любым удобным способом.
+
+    1. Используя PowerShell / bash / zsh перейти в директорию с проектом
+       "cd /project/dir" (где /project/dir/ директория с проектом на хосте).
+    2. В директории проекта использовать команду -> "docker compose up".
+    3. Можно пользоваться сервисом.
+
+
+Примеры взаимодействия с API:
+
+    1. Если таблица 'question' пустая.
+
+        POST REQUEST:
+            URL: http://host:port/get_question
+            REQUEST BODY: {'question_num': 1}
+
+        RESPONSE: {}
+
+    2. Если в таблице 'question' есть данные.
+
+        POST REQUEST:
+            URL: http://host:port/get_question
+            REQUEST BODY: {'question_num': 1}
+
+        RESPONSE: {"question": "something question"}
+
+    3. Аналогичное пунктам 1 и 2 поведение, мы получим если
+       если значение параметра тела запроса 'question_num' будет больше 1.
